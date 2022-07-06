@@ -8,7 +8,7 @@ module.exports = {
                 use: ["babel-loader"],
             },
             {
-                test: /.s?css$/,
+                test: /.css$/,
                 use: ["style-loader", "css-loader"],
             },
         ],
