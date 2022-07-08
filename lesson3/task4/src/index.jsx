@@ -12,4 +12,4 @@ const rootElement = document.querySelector("#root");
 
 
 
-ReactDOM.render(<Greeting firstName="John" lastName="Doe" birthDate="2001-12-31T11:11:11.819Z"/>, rootElement);
+ReactDOM.render(<Greeting firstName="John" lastName="Doe" birthDate="2001-12-01T11:11:11.819Z"/>, rootElement);
