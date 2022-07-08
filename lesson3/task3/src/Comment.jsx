@@ -2,14 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./comments.scss";
 import moment from "moment";
-import UserInfo from "./UserInfo";
+import UserInfo from "./UserInfo.jsx";
 
 const formatDate = date => moment(date).format("DD MMM YYYY");
 
 function Comment(props) {
+  console.log(props.user.avatarUrl)
   return (
     <div className="comment">
-      <Comment props />
+      <UserInfo user ={props.user} />
       <div className="comment__text">{props.text}</div>
       <div className="comment__date">{formatDate(props.date)}</div>
     </div>

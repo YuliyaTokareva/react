@@ -1,14 +1,12 @@
 import React from "react";
+import Avatar  from "./Avatar.jsx";
 
-const UserInfo = props=>{
-   <div className="user-info">
-        <img
-          className="avatar"
-          src={props.user.avatarUrl}
-          alt={props.user.name}
-        />
+const UserInfo = props =>{
+
+return (<div className="user-info">
+        <Avatar user ={props.user} />
         <div className="user-info__name">{props.user.name}</div>
-      </div>
+      </div>)
 }
 
 export default UserInfo;
