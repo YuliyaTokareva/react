@@ -10,7 +10,7 @@ function Comment(props) {
   console.log(props.user.avatarUrl)
   return (
     <div className="comment">
-      <UserInfo autor = {props.user} />
+      <UserInfo user ={props.user} />
       <div className="comment__text">{props.text}</div>
       <div className="comment__date">{formatDate(props.date)}</div>
     </div>
