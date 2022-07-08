@@ -7,10 +7,10 @@ import UserInfo from "./UserInfo.jsx";
 const formatDate = date => moment(date).format("DD MMM YYYY");
 
 function Comment(props) {
-  console.log(props.user.avatarUrl)
+  console.log(props.autor.avatarUrl)
   return (
     <div className="comment">
-      <UserInfo user ={props.user} />
+      <UserInfo user ={props.autor} />
       <div className="comment__text">{props.text}</div>
       <div className="comment__date">{formatDate(props.date)}</div>
     </div>
