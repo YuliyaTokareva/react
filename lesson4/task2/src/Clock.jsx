@@ -25,13 +25,13 @@ class Clock extends Component {
      this.cityTime=this.Time.add(`${this.hour}`, 'hours').format("HH:mm:ss")
 
     this.state = {
-      counter:  moment().add(`${this.hour}`, 'hours').format("HH:mm:ss"),
+      counter:  moment().add(`${this.hour}`, 'hours').format("HH:mm:ss  a"),
      
     };
 
   setInterval(() => {
     this.setState({
-      counter: moment().add(`${this.hour}`, 'hours').format("HH:mm:ss")
+      counter: moment().add(`${this.hour}`, 'hours').format("HH:mm:ss  A")
      // this.state.counter+ 1,
     });
 }, 1000);
