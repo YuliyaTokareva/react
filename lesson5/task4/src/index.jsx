@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import Color from "./Color.jsx";
+import Colors from "./Colors.jsx";
 
 const rootElement = document.querySelector("#root");
 
 
 
 
-ReactDOM.render(<Color  />, rootElement);
+ReactDOM.render(<Colors  />, rootElement);

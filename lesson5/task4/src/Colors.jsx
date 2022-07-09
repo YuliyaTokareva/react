@@ -4,7 +4,7 @@ const RED = '#f00';
 const GREEN = '#0f0';
 const BLUE = '#00f';
 
-class Color extends Component {
+class Colors extends Component {
 
   setBodyColor = color =>{
     document.body.style.backgroundColor = color;
@@ -40,4 +40,4 @@ class Color extends Component {
 
 }
 
- export default Color;
+ export default Colors;
