@@ -8,11 +8,11 @@ class Toggler extends Component {
   this.state = {
     counter: "Off",
   }
-  this.decrement = this.decrement.bind(this)
+  this.textButton = this.textButton.bind(this)
   
 }
 
-decrement(e){
+textButton(e){
       const textNow = e.target.textContent;
        textNow === "On" ? 
       this.setState({
@@ -27,7 +27,7 @@ decrement(e){
   render() {
     return (
      <div className="toggler"
-     onClick={this.decrement}
+     onClick={this.textButton}
      >{this.state.counter}</div>   
   );
   }
