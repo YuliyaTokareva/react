@@ -12,7 +12,7 @@ class Toggler extends Component {
   
 }
 
-textButton(e){
+textButton = (e) =>{
       const textNow = e.target.textContent;
        textNow === "On" ? 
       this.setState({
