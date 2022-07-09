@@ -6,7 +6,7 @@ class Toggler extends Component {
   super(props)
 
   this.state = {
-    counter: "On",
+    counter: "Off",
   }
   this.decrement = this.decrement.bind(this)
   
