@@ -4,33 +4,38 @@ import React, { Component} from "react";
 
 //import 'moment-timezone';
 
+ const Time = moment(new Date());
+const date =new Date();
 
 
- const date = new Date();
  
 const timeZone = new Date(date.setUTCHours(-5));
 const formatDate = date => moment(date).format("HH:mm:ss");
-const zone = moment(date);
+const zone = moment(date).add(1, 'milliseconds').format("HH:mm:ss");
 
-//console.log(formatDate(a));
+console.log(zone);
 
 class Clock extends Component {
   constructor(props){
     super(props);
     this.hour = props.offset
-    this.timeZone = date.setUTCHours(this.hour);
-    this.format = moment(this.timeZone).format("HH:mm:ss")
+    // this.timeZone = moment(date.setUTCHours(this.hour));
+    // this.format = this.timeZone
+     this.Time = moment(new Date());
+     this.cityTime=this.Time.add(`${this.hour}`, 'hours').format("HH:mm:ss")
 
     this.state = {
-      counter:  this.timeZone,
+      counter:  moment().add(`${this.hour}`, 'hours').format("HH:mm:ss"),
+     
     };
-  
-console.log(props.location);
+
   setInterval(() => {
     this.setState({
-      counter: this.state.counter + 1
+      counter: moment().add(`${this.hour}`, 'hours').format("HH:mm:ss")
+     // this.state.counter+ 1,
     });
 }, 1000);
+
 }
 
   render() {
