@@ -2,7 +2,7 @@ import React, { Component} from "react";
  import './clock.scss'
  import moment from "moment";
 
-//import 'moment-timezone';
+import 'moment-timezone';
 
  const Time = moment(new Date());
 const date =new Date();
@@ -21,7 +21,7 @@ class Clock extends Component {
     this.hour = props.offset
     // this.timeZone = moment(date.setUTCHours(this.hour));
     // this.format = this.timeZone
-     this.Time = moment(new Date());
+     this.Time = moment(new Date()).tz('Europe/London');
      this.cityTime=this.Time.add(`${this.hour}`, 'hours').format("HH:mm:ss")
 
     this.state = {
