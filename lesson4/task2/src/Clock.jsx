@@ -4,7 +4,7 @@ import React, { Component} from "react";
 
 //import 'moment-timezone';
 
- const Time = moment(new Date());
+ //const Time = moment(new Date());
 const date =new Date().toLocaleString("en-US", {timeZone: "Europe/London"});
 
 
@@ -14,14 +14,12 @@ class Clock extends Component {
   constructor(props){
     super(props);
     this.hour = props.offset
-    // this.timeZone = moment(date.setUTCHours(this.hour));
-    // this.format = this.timeZone
-     this.Time = moment(date);
-     this.test = moment(this.Time._d).add(`${this.hour}`, 'hours').format("HH:mm:ss A");
-     this.cityTime=this.Time.add(`${this.hour}`, 'hours').format("HH:mm:ss")
+    this.Time = moment(date);
+    this.start = moment(this.Time._d).add(`${this.hour}`, 'hours').format("HH:mm:ss A");
+
 
     this.state = {
-      counter:  this.test,
+      counter:  this.start,
      
     };
 
