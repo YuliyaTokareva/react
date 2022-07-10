@@ -1,10 +1,12 @@
 import React from "react";
 
-const Online = () => {
+const Online = (props) => {
     return (
         <>
-            <span className='status__text'>All good!</span>
-            {/* <button className='status__btn'>good!</button> */}
+            <span className='status__text'>All</span>
+            <button className='status__btn' onClick={props.online}>
+                good!
+            </button>
         </>
     );
 };
