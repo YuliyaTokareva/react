@@ -8,13 +8,13 @@ class Toggler extends Component {
   this.state = {
     counter: "Off",
   }
-  this.textButton = this.textButton.bind(this)
+ 
   
 }
 
 textButton=(e)=>{
       const textNow = e.target.textContent;
-       textNow === "On" ? 
+      textNow === "On" ? 
       this.setState({
       counter: "Off",
       })
