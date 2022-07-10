@@ -6,29 +6,23 @@ class Toggler extends Component {
   super(props)
 
   this.state = {
-    counter: "Off",
+    active: false,
   }
- 
   
 }
 
-textButton=(e)=>{
-      const textNow = e.target.textContent;
-      textNow === "On" ? 
-      this.setState({
-      counter: "Off",
-      })
-      : 
-      this.setState({
-      counter: "On",
-      })
+textButton=()=>{
+     
+   this.setState({
+      active: !this.state.active,
+    });
 }
 
   render() {
     return (
      <div className="toggler"
-     onClick={e => this.textButton(e)}
-     >{this.state.counter}</div>   
+     onClick={() => this.textButton()}
+     > {this.state.active ? 'On' : 'Off'}</div>   
   );
   }
 
