@@ -10,22 +10,18 @@ class Status extends Component {
         };
     }
 
-    handleLogin = () => {
+    internetStatus = () => {
         this.setState({
-            isOnline: true,
+            isOnline: !this.state.isOnline,
         });
     };
-    handleLogout = () => {
-        this.setState({
-            isOnline: false,
-        });
-    };
+
     render() {
         let button;
         if (this.state.isOnline) {
-            button = <Online online={this.handleLogout} />;
+            button = <Online status={this.internetStatus} />;
         } else {
-            button = <Offline offline={this.handleLogin} />;
+            button = <Offline status={this.internetStatus} />;
         }
         return <div className='status'>{button}</div>;
     }

@@ -4,7 +4,7 @@ const Online = (props) => {
     return (
         <>
             <span className='status__text'>All</span>
-            <button className='status__btn' onClick={props.online}>
+            <button className='status__btn' onClick={props.status}>
                 good!
             </button>
         </>
