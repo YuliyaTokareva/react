@@ -1,10 +1,8 @@
 import React from "react";
 import Login from "./Login.jsx";
-import Logout from "./Logout.jsx"
+import Logout from "./Logout.jsx";
 
-const UserGreeting = props =>{
-  
-    return <h1>Hello, user 😎</h1>
- 
-}
+const UserGreeting = () => {
+    return <h1>Hello, user 😎</h1>;
+};
 export default UserGreeting;
