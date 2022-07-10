@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 
 
-class Toggler extends Component {
+class ColorPicker extends Component {
   constructor(props){
   super(props)
 
   this.state = {
     counter: "",
   }
- 
   
 }
   setColor = color =>{
@@ -50,4 +49,4 @@ class Toggler extends Component {
 
 }
 
- export default Toggler;
+ export default ColorPicker;

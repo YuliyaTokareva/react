@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import Toggler from "./Toggler.jsx";
+import ColorPicker from "./ColorPicker.jsx";
 
 const rootElement = document.querySelector("#root");
 
 
 
 
-ReactDOM.render(<Toggler  />, rootElement);
+ReactDOM.render(<ColorPicker  />, rootElement);
