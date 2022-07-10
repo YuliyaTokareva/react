@@ -1,51 +1,43 @@
-import React, { Component} from "react";
- import './clock.scss'
- import moment from "moment";
+import React, { Component } from "react";
+import "./clock.scss";
+import moment from "moment";
 
-//import 'moment-timezone';
-
- //const Time = moment(new Date());
-const date =new Date().toLocaleString("en-US", {timeZone: "Europe/London"});
-
-
-console.log(date);
+const getTimeWithOffset = (offset) => {
+    const currentTime = new Date();
+    const utcOffset = currentTime.getTimezoneOffset() / 60;
+    return new Date(
+        currentTime.setHours(currentTime.getHours() + offset + utcOffset)
+    );
+};
 
 class Clock extends Component {
-  constructor(props){
-    super(props);
-    this.hour = props.offset
-    this.Time = moment(date);
-    this.start = moment(this.Time._d).add(`${this.hour}`, 'hours').format("HH:mm:ss A");
+    constructor(props) {
+        super(props);
+        this.locationTime = moment(getTimeWithOffset(props.offset)).format(
+            "HH:mm:ss A"
+        );
 
+        this.state = {
+            time: this.locationTime,
+        };
 
-    this.state = {
-      counter:  this.start,
-     
-    };
+        setInterval(() => {
+            this.setState({
+                time: moment(getTimeWithOffset(props.offset)).format(
+                    "HH:mm:ss A"
+                ),
+            });
+        }, 1000);
+    }
 
-  setInterval(() => {
-    this.setState({
-      counter: moment(this.state.counter, "HH:mm:ss A").add(1, 'seconds').format("HH:mm:ss A"),
-     
-    });
-}, 1000);
-
+    render() {
+        return (
+            <div className='clock'>
+                <div className='clock__location'>{this.props.location}</div>
+                <div className='clock__time'>{this.state.time}</div>
+            </div>
+        );
+    }
 }
 
-  render() {
-    return (
-          <div className="clock">
-    <div className="clock__location">
-        {this.props.location}
-    </div>
-    <div className="clock__time">
-        {this.state.counter}
-    </div>
-</div>
-  
-  );
-  }
-
-}
-
- export default Clock;
+export default Clock;

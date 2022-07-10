@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 
 const Login = () =>{
-  return <h1>Hello, user 😎</h1>
+  <button onClick={this.handleLogin}>Login</button>
 }
 
  export default Login;
