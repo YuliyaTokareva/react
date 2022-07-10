@@ -6,10 +6,14 @@ class Status extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOnline: false,
+            isOnline: true,
         };
     }
-
+    setState = () => {
+        this.setState({
+            status: !this.status.isOnline,
+        });
+    };
     render() {
         let button;
         if (this.state.isOnline) {
