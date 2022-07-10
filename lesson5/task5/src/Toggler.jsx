@@ -22,7 +22,7 @@ textButton=()=>{
     return (
      <div className="toggler"
      onClick={() => this.textButton()}
-     > {this.state.active ? 'On' : 'Off'}</div>   
+     >{this.state.active ? 'On' : 'Off'}</div>   
   );
   }
 
