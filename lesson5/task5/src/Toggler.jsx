@@ -27,7 +27,7 @@ textButton=(e)=>{
   render() {
     return (
      <div className="toggler"
-     onClick={this.textButton}
+     onClick={e => this.textButton(e)}
      >{this.state.counter}</div>   
   );
   }
