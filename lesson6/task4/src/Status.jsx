@@ -3,6 +3,7 @@ import Online from "./Online.jsx";
 import Offline from "./Offline.jsx";
 
 const Status = (props) => {
+    console.log(props);
     let button;
     if (props.isOnline) {
         return (
@@ -11,9 +12,11 @@ const Status = (props) => {
             </div>
         );
     } else {
-        <div className='status'>
-            <Offline />
-        </div>;
+        return (
+            <div className='status'>
+                <Offline />
+            </div>
+        );
     }
     return <div className='status'>{button}</div>;
 };
