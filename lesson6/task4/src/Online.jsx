@@ -1,12 +1,9 @@
 import React from "react";
 
-const Online = (props) => {
+const Online = () => {
     return (
         <>
-            <span className='status__text'>All</span>
-            <button className='status__btn' onClick={props.status}>
-                good!
-            </button>
+            <span className='status__text'>All good!</span>
         </>
     );
 };
