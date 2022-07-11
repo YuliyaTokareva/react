@@ -34,13 +34,13 @@ class Auth extends Component {
 
     render() {
         if (!this.state.status && !this.state.spinner) {
-            return <Logout setStatus={this.setSpinnerOn} />;
+            return <Logout onLogout={this.setSpinnerOn} />;
         }
         if (!this.state.status && this.state.spinner) {
             return <Spinner size={this.spinnerWidth.size} />;
         }
         if (this.state.status && !this.state.spinner) {
-            return <Login setStatus={this.setLogout} />;
+            return <Login onLogin={this.setLogout} />;
         }
     }
 }
