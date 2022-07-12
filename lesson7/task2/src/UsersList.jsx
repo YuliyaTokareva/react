@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import User from "./User.jsx";
 
-class UserList extends Component {
-    //let usersForSorting = users.slise();
+class UsersList extends Component {
     state = {
         sorting: null,
     };
@@ -39,7 +38,7 @@ class UserList extends Component {
     }
 }
 
-export default UserList;
+export default UsersList;
 //in User
 // 1. in User take: name, age
 //in UsersLis take users: users
