@@ -15,7 +15,7 @@ class UsersList extends Component {
         let usersList;
         if (this.state.sorting) {
             usersList = this.props.users
-                .slise()
+                .slice()
                 .sort((a, b) =>
                     this.state.sorting === "asc" ? a.age - b.age : b.age - a.age
                 );
@@ -29,7 +29,7 @@ class UsersList extends Component {
                     {this.state.sorting || "-"}
                 </button>
                 <ul className='users'>
-                    {this.props.users.map((user) => (
+                    {usersList.map((user) => (
                         <User key={user.id} name={user.name} age={user.age} />
                     ))}
                 </ul>
