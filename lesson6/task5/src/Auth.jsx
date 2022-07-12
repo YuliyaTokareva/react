@@ -8,9 +8,9 @@ class Auth extends Component {
         super(props);
         this.state = {
             connection: true,
-            spinnerOn: false,
+            spinner: false,
         };
-        this.spinnerDiameter = {
+        this.spinnerWidth = {
             size: "100px",
         };
     }
@@ -22,24 +22,25 @@ class Auth extends Component {
 
     setSpinnerOn = () => {
         this.setState({
-            spinnerOn: true,
+            spinner: true,
             connection: false,
         });
         setTimeout(() => {
             this.setState({
-                spinnerOn: false,
+                spinner: false,
             });
         }, 2000);
     };
 
     render() {
-        if (!this.state.connection) {
-            return this.state.spinnerOn ? (
-                <Spinner size={this.spinnerDiameter.size} />
-            ) : (
-                <Logout onLogout={this.setLogin} />
-            );
+        if (!this.state.connection && !this.state.spinner) {
+            return <Logout onLogout={this.setLogin} />;
         }
+
+        if (this.state.spinner) {
+            return <Spinner size={this.spinnerWidth.size} />;
+        }
+
         return <Login onLogin={this.setSpinnerOn} />;
     }
 }
