@@ -7,7 +7,7 @@ class Auth extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            status: true,
+            connection: true,
             spinner: false,
         };
         this.spinnerWidth = {
@@ -16,14 +16,14 @@ class Auth extends Component {
     }
     setLogin = () => {
         this.setState({
-            status: true,
+            connection: true,
         });
     };
 
     setSpinnerOn = () => {
         this.setState({
             spinner: true,
-            status: false,
+            connection: false,
         });
         setTimeout(() => {
             this.setState({
@@ -33,15 +33,14 @@ class Auth extends Component {
     };
 
     render() {
-        if (this.state.status && !this.state.spinner) {
-            return <Login onLogin={this.setSpinnerOn} />;
+        if (!this.state.connection) {
+            return this.state.spinner ? (
+                <Spinner size={this.spinnerWidth.size} />
+            ) : (
+                <Logout onLogout={this.setLogin} />
+            );
         }
-        if (!this.state.status && this.state.spinner) {
-            return <Spinner size={this.spinnerWidth.size} />;
-        }
-        if (!this.state.status && !this.state.spinner) {
-            return <Logout onLogout={this.setLogin} />;
-        }
+        return <Login onLogin={this.setSpinnerOn} />;
     }
 }
 
@@ -55,11 +54,11 @@ export default Auth;
 //         - click on Login button => spinner 2sec
 //         - show Logout
 // /Login
-// status: true,
+// connection: true,
 // spinner: false,
 // /Spinner
-// status: false,
+// connection: false,
 // spinner: true,
 // /Logout
-// status: false,
+// connection: false,
 // spinner: false,
