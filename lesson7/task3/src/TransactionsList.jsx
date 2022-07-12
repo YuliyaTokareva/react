@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Transaction from "./Transaction.jsx";
 
-class TransactionList extends Component {
+class TransactionsList extends Component {
     render() {
         return (
             <ul className='transactions'>
@@ -20,7 +20,7 @@ class TransactionList extends Component {
     }
 }
 
-export default TransactionList;
+export default TransactionsList;
 //in User
 // 1. in User take: name, age
 //in UsersLis take users: users

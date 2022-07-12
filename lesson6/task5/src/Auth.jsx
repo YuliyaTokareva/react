@@ -7,8 +7,8 @@ class Auth extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            connection: true,
-            spinner: false,
+            isProcessing: true,
+            isSpinner: false,
         };
         this.spinnerWidth = {
             size: "100px",
@@ -16,28 +16,28 @@ class Auth extends Component {
     }
     setLogin = () => {
         this.setState({
-            connection: true,
+            isProcessing: true,
         });
     };
 
     setSpinnerOn = () => {
         this.setState({
-            spinner: true,
-            connection: false,
+            isSpinner: true,
+            isProcessing: false,
         });
         setTimeout(() => {
             this.setState({
-                spinner: false,
+                isSpinner: false,
             });
         }, 2000);
     };
 
     render() {
-        if (!this.state.connection && !this.state.spinner) {
+        if (!this.state.isProcessing && !this.state.isSpinner) {
             return <Logout onLogout={this.setLogin} />;
         }
 
-        if (this.state.spinner) {
+        if (this.state.isSpinner) {
             return <Spinner size={this.spinnerWidth.size} />;
         }
 
