@@ -36,10 +36,12 @@ class UsersList extends Component {
         });
     };
     render() {
-        const totalPages = Math.ceil(
-            (this.props.users.length + 1) / this.state.itemsPerPge
+        // const cyrentItemsShow =
+        //     (this.state.totalItems - this.state.pagination * 3) % 3 === 0;
+        let totalPages = Math.ceil(
+            this.state.totalItems / this.state.itemsPerPge
         );
-        console.log(totalPages);
+        //console.log(cyrentItemsShow);
         return (
             <div>
                 <div className='pagination'>
