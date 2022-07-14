@@ -22,13 +22,16 @@ class Clock extends Component {
     }
 
     componentDidMount() {
-        setInterval(() => {
+        this.inretval = setInterval(() => {
             this.setState({
                 time: moment(getTimeWithOffset(this.props.offset)).format(
                     "HH:mm:ss A"
                 ),
             });
         }, 1000);
+    }
+    componentWillUnmount() {
+        clearInterval(this.inretval);
     }
 
     render() {
