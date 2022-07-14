@@ -4,10 +4,10 @@ class Life extends Component {
     constructor(props) {
         super(props);
 
-        console.log("good place to create state");
+        console.log("constructor: good place to create state");
     }
     componentDidMount() {
-        console.log("API calls, subscriptions");
+        console.log("componentDidMount: API calls, subscriptions");
     }
     shouldComponentUpdate(nextProps) {
         console.log(
