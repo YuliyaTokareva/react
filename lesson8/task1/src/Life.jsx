@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class Life extends Component {
+    /////Показывается при первой загрузке
     constructor(props) {
         super(props);
 
@@ -34,3 +35,18 @@ class Life extends Component {
 }
 
 export default Life;
+
+///Первое прохождение
+//////нажали на кнопку Show
+// ----constructor,
+// ----render(),
+// ----componentDidMount;
+
+//Второе прохождение
+/////После нажатия кнопки 'Update'
+// ----shouldComponentUpdate();
+// ----render();
+// ----componentDidUpdate()
+
+// После нажатия кнопки 'Hide'
+// ----componentWillUnmount()
