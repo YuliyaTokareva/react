@@ -5,21 +5,38 @@ class ConnectionStatus extends Component {
         connection: true,
     };
     componentDidMount() {
-        window.addEventListener("offline", this.setConnection);
-        window.addEventListener("online", this.setConnection);
+        window.addEventListener("online", () =>
+            this.setState({ connection: true })
+        );
+
+        window.addEventListener("offline", () =>
+            this.setState({ connection: false })
+        );
     }
     componentWillUnmount() {
-        window.removeEventListener("offline", this.setConnection);
-        window.removeEventListener("online", this.setConnection);
-    }
+        window.removeEventListener("online", () =>
+            this.setState({ connection: true })
+        );
 
-    setConnection = () => {
-        this.setState({
-            connection: !this.state.connection,
-        });
-    };
+        window.removeEventListener("offline", () =>
+            this.setState({ connection: false })
+        );
+    }
+    // onConnection = (e) => {
+    //     const { newConnection } = e.target;
+    //     //this.setConnection(newConnection);
+    //     console.log(e.target);
+    // };
+
+    // setConnection = (newConnection) => {
+    //     this.setState({
+    //         connection: newConnection,
+    //     });
+    //     console.log(this.state.connection);
+    // };
 
     render() {
+        console.log(this.state.connection);
         return (
             <div
                 className={`${
