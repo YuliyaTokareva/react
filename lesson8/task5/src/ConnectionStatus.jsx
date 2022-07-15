@@ -21,7 +21,11 @@ class ConnectionStatus extends Component {
 
     render() {
         return (
-            <div className='status status_offline'>
+            <div
+                className={`${
+                    this.state.connection ? "status_online" : "status_offline"
+                } status`}
+            >
                 {this.state.connection ? "Online" : "Offline"}
             </div>
         );
