@@ -22,21 +22,8 @@ class ConnectionStatus extends Component {
             this.setState({ connection: false })
         );
     }
-    // onConnection = (e) => {
-    //     const { newConnection } = e.target;
-    //     //this.setConnection(newConnection);
-    //     console.log(e.target);
-    // };
-
-    // setConnection = (newConnection) => {
-    //     this.setState({
-    //         connection: newConnection,
-    //     });
-    //     console.log(this.state.connection);
-    // };
 
     render() {
-        console.log(this.state.connection);
         return (
             <div
                 className={`${
