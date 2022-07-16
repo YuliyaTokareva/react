@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Search extends Component {
+class UserForm extends Component {
     state = {
         name: "",
         student: "",
@@ -14,16 +14,16 @@ class Search extends Component {
         this.setState({
             [name]: val,
         });
-        // console.log(this.state);
-    };
-    handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state);
     };
 
     render() {
         return (
-            <form className='login-form' onSubmit={this.handleSubmit}>
+            <form
+                className='login-form'
+                onSubmit={() => {
+                    this.props.onSubmit(this.state);
+                }}
+            >
                 <h1 className='form-title'>Profile</h1>
                 <div className='form-control'>
                     <label className='form-label' htmlFor='name'>
@@ -90,7 +90,7 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default UserForm;
 
 ///Первое прохождение
 //////нажали на кнопку Show
