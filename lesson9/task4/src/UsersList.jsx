@@ -32,14 +32,14 @@ class UsersList extends Component {
 
     render() {
         let newUserArr = this.filtering();
-        let sorting = newUserArr.length;
+        let sortingCount = newUserArr.length;
 
         return (
             <div>
                 <div className='filter'>
                     <Filter
-                        val={this.state.inputValue}
-                        sorting={sorting}
+                        filterText={this.state.inputValue}
+                        count={sortingCount}
                         update={this.update}
                     />
                 </div>

@@ -1,13 +1,13 @@
 import React from "react";
 
-const Filter = ({ val, sorting, update }) => {
+const Filter = ({ filterText, count, update }) => {
     return (
         <>
-            <span className='filter__count'>{`${sorting}`}</span>
+            <span className='filter__count'>{`${count}`}</span>
             <input
                 type='text'
                 className='filter__input'
-                value={val}
+                value={filterText}
                 onChange={(e) => update(e.target.value)}
             />
         </>
