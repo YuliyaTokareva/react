@@ -8,7 +8,7 @@ class App extends Component {
 
     createUser = (obj, event) => {
         event.preventDefault();
-        alert(this.obj);
+        alert(obj);
     };
     render() {
         return <Search onSubmit={this.createUser} />;

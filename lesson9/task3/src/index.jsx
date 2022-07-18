@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import UserForm from "./UserForm.jsx";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
+import UserForm from './UserForm.jsx';
 
-const rootElement = document.querySelector("#root");
+const rootElement = document.querySelector('#root');
 
 ReactDOM.render(<UserForm />, rootElement);
