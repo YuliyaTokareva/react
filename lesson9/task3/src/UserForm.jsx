@@ -18,16 +18,18 @@ class UserForm extends Component {
     };
     setRef = (node) => {
         this.formRef = node;
+        console.log(this.formRef);
     };
 
     render() {
+        //console.log(this.formRef);
         return (
             <form
                 ref={this.setRef}
                 className="login-form"
                 onSubmit={(e) => {
                     e.preventDefault();
-                    this.props.onSubmit(this.state);
+                    this.props.onSubmit(this.formRef);
                 }}
             >
                 <h1 className="form-title">Profile</h1>
