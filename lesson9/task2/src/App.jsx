@@ -6,8 +6,8 @@ class App extends Component {
         super(props);
     }
 
-    createUser = (obj, event) => {
-        event.preventDefault();
+    createUser = (obj) => {
+        e.preventDefault();
         alert(Object.values(obj));
     };
     render() {
