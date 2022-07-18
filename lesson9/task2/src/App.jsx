@@ -7,7 +7,6 @@ class App extends Component {
     }
 
     createUser = (obj) => {
-        e.preventDefault();
         alert(Object.values(obj));
     };
     render() {
