@@ -6,13 +6,8 @@ class App extends Component {
         super(props);
     }
 
-    createUser = (form) => {
-        const formData = [...new FormData(form)].reduce(
-            (acc, [name, value]) => ({ ...acc, [name]: value }),
-            {},
-        );
-        //const obj = Object.values(formData).reduce((acc, value) => ({ ...acc, value }), {});
-        console.log(formData);
+    createUser = (obj) => {
+        console.log(obj);
     };
     render() {
         return <UserForm onSubmit={this.createUser} />;

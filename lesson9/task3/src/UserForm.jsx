@@ -13,6 +13,12 @@ class UserForm extends Component {
 
         console.log(node);
     };
+    onObj = (form) => {
+        return [...new FormData(form)].reduce(
+            (acc, [name, value]) => ({ ...acc, [name]: value }),
+            {},
+        );
+    };
 
     render() {
         return (
@@ -21,7 +27,7 @@ class UserForm extends Component {
                 className="login-form"
                 onSubmit={(event) => {
                     event.preventDefault();
-                    this.props.onSubmit(this.formRef);
+                    this.props.onSubmit(this.onObj(this.formRef));
                 }}
             >
                 <h1 className="form-title">Profile</h1>
