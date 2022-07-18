@@ -13,7 +13,7 @@ class App extends Component {
             (acc, [name, value]) => ({ ...acc, [name]: value }),
             {},
         );
-        console.log(formData);
+        console.log(Object.values(formData));
     };
     render() {
         return <UserForm onSubmit={this.createUser} />;
