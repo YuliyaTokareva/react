@@ -38,7 +38,7 @@ class UsersList extends Component {
                     <Filter
                         filterText={this.state.inputValue}
                         count={sortingCount}
-                        update={this.update}
+                        onChange={this.update}
                     />
                 </div>
                 <ul className="users">

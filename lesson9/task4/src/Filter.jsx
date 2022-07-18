@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Filter = ({ filterText, count, update }) => {
+const Filter = ({ filterText, count, onChange }) => {
     return (
         <>
             <span className="filter__count">{`${count}`}</span>
@@ -9,7 +9,7 @@ const Filter = ({ filterText, count, update }) => {
                 className="filter__input"
                 value={filterText}
                 onChange={(e) => {
-                    update(e.target.value);
+                    onChange(e.target.value);
                 }}
             />
         </>
