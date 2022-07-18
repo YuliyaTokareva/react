@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from './UserForm.jsx';
+import UserForm from './UserForm.jsx';
 
 class App extends Component {
     constructor(props) {
@@ -7,10 +7,10 @@ class App extends Component {
     }
 
     createUser = (obj) => {
-        console.log(this.obj);
+        alert(Object.values(obj));
     };
     render() {
-        return <Search onSubmit={this.createUser} />;
+        return <UserForm onSubmit={this.createUser} />;
     }
 }
 
