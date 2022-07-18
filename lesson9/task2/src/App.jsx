@@ -8,7 +8,7 @@ class App extends Component {
 
     createUser = (obj, event) => {
         event.preventDefault();
-        alert(JSON.stringify(obj));
+        alert(Object.values(obj));
     };
     render() {
         return <UserForm onSubmit={this.createUser} />;
