@@ -4,10 +4,16 @@ import UserForm from './UserForm.jsx';
 class App extends Component {
     constructor(props) {
         super(props);
+        //this.input = React.createRef();
     }
 
-    createUser = (obj) => {
-        console.log(Object.values(obj));
+    createUser = (event, form) => {
+        event.preventDefault();
+        const formData = [...new FormData(form)].reduce(
+            (acc, [name, value]) => ({ ...acc, [name]: value }),
+            {},
+        );
+        console.log(formData);
     };
     render() {
         return <UserForm onSubmit={this.createUser} />;

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import User from "./User.jsx";
-import Filter from "./Filter.jsx";
+import React, { Component } from 'react';
+import User from './User.jsx';
+import Filter from './Filter.jsx';
 
 class UsersList extends Component {
     state = {
-        text: "",
+        text: '',
         sorting: 0,
-        inputValue: "",
+        inputValue: '',
         count: 0,
     };
     update = (el) => {
@@ -19,12 +19,10 @@ class UsersList extends Component {
     filtering = () => {
         let usersArr = this.props.users;
         const filter =
-            this.inputValue === ""
+            this.inputValue === ''
                 ? usersArr
                 : [...usersArr].filter((user) =>
-                      user.name
-                          .toUpperCase()
-                          .includes(this.state.inputValue.toUpperCase())
+                      user.name.toUpperCase().includes(this.state.inputValue.toUpperCase()),
                   );
 
         return filter;
@@ -36,14 +34,14 @@ class UsersList extends Component {
 
         return (
             <div>
-                <div className='filter'>
+                <div className="filter">
                     <Filter
                         filterText={this.state.inputValue}
                         count={sortingCount}
                         update={this.update}
                     />
                 </div>
-                <ul className='users'>
+                <ul className="users">
                     {newUserArr.map((user) => (
                         <User key={user.id} name={user.name} age={user.age} />
                     ))}
