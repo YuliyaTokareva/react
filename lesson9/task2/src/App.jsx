@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Search from "./UserForm.jsx";
+import React, { Component } from 'react';
+import UserForm from './UserForm.jsx';
 
 class App extends Component {
     constructor(props) {
@@ -8,10 +8,10 @@ class App extends Component {
 
     createUser = (obj, event) => {
         event.preventDefault();
-        alert(obj);
+        alert(JSON.stringify(obj));
     };
     render() {
-        return <Search onSubmit={this.createUser} />;
+        return <UserForm onSubmit={this.createUser} />;
     }
 }
 
