@@ -7,7 +7,7 @@ class App extends Component {
     }
 
     createUser = (obj) => {
-        alert(Object.values(obj));
+        console.log(Object.values(obj));
     };
     render() {
         return <UserForm onSubmit={this.createUser} />;
