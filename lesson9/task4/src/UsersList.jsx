@@ -13,7 +13,7 @@ class UsersList extends Component {
         this.setState({
             inputValue: el,
         });
-        this.filtering();
+        this.filtering;
     };
 
     filtering = () => {
