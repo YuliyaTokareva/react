@@ -8,31 +8,20 @@ class UserForm extends Component {
         about: '',
     };
 
-    // handleChange = (event) => {
-    //     event.preventDefault();
-    //     const formData = [...new FormData(this.formRef)].reduce(
-    //         (acc, [name, value]) => ({ ...acc, [name]: value }),
-    //         {},
-    //     );
-    //     console.log(formData);
-    // };
-
     setRef = (node) => {
-        //this.props.input = React.createRef();
         this.formRef = node;
+
         console.log(node);
     };
 
     render() {
-        //console.log(this.formRef.current);
-        //const node = this.formRef.current;
-        // console.log(this.formRef);
         return (
             <form
                 ref={this.setRef}
                 className="login-form"
-                onSubmit={(e) => {
-                    this.props.onSubmit(e, this.formRef);
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    this.props.onSubmit(this.formRef);
                 }}
             >
                 <h1 className="form-title">Profile</h1>
