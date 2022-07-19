@@ -10,7 +10,7 @@ const Filter = ({ filterText, count, onChange }) => {
                 className="filter__input"
                 value={filterText}
                 onChange={(e) => {
-                    onChange(e.target);
+                    onChange(e);
                 }}
             />
         </>

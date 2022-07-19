@@ -11,7 +11,7 @@ class UsersList extends Component {
     };
     update = (inputText) => {
         this.setState({
-            inputValue: inputText.value,
+            inputValue: inputText.target.value,
         });
         this.filtering;
     };
