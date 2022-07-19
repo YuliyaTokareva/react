@@ -9,9 +9,9 @@ class UsersList extends Component {
         inputValue: '',
         count: 0,
     };
-    update = (el) => {
+    update = (inputText) => {
         this.setState({
-            inputValue: el,
+            inputValue: inputText.value,
         });
         this.filtering;
     };

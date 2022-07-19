@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-    state = {
-        name: '',
-        student: '',
-        occupation: '',
-        about: '',
-    };
-
     setRef = (node) => {
         this.formRef = node;
 
