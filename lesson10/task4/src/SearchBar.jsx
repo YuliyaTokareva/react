@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const SearchBar = ({ filterText, inStockOnly, onFilterTextChange, onInStockChange }) => {
     return (
@@ -13,7 +13,7 @@ const SearchBar = ({ filterText, inStockOnly, onFilterTextChange, onInStockChang
                 <input
                     type="checkbox"
                     checked={inStockOnly}
-                    onChange={(e) => onInStockChange(e.target.value)}
+                    onChange={(e) => onInStockChange(e.target.checked)}
                 />{' '}
                 Only show products in stock
             </p>
