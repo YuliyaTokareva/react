@@ -1,8 +1,11 @@
 import React from 'react';
-import Calculator from './Calculator.jsx';
 
-const BoilingVerdict = () => {
-    return <Calculator />;
+const BoilingVerdict = (props) => {
+    if (props.celsius >= 100) {
+        return <p>The water would boil.</p>;
+    }
+    return <p>The water would not boil.</p>;
+    // return <Calculator />;
 };
 
 export default BoilingVerdict;
