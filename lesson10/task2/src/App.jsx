@@ -32,7 +32,7 @@ class App extends Component {
                 </h1>
                 <main className="content">
                     {/* <!-- ShoppingCart --> */}
-                    <ShoppingCart userData={this.state.userData} />
+                    <ShoppingCart userName={this.state.userData.firstName} />
                     {/* <!-- Profile --> */}
                     <Profile userData={this.state.userData} onChange={this.onChange} />
                 </main>

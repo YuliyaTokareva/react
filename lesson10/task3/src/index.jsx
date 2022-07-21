@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './BoilingVerdict.jsx';
+import TemperatureInput from './TemperatureInput.jsx';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<BoilingVerdict />, rootElement);
+ReactDOM.render(<TemperatureInput />, rootElement);
