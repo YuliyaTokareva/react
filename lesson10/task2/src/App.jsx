@@ -27,7 +27,9 @@ class App extends Component {
         return (
             //    <!-- App -->
             <div className="page">
-                <h1 className="title">Hello, John Doe</h1>
+                <h1 className="title">
+                    Hello, {this.state.userData.firstName} {this.state.userData.lastName}
+                </h1>
                 <main className="content">
                     {/* <!-- ShoppingCart --> */}
                     <ShoppingCart userData={this.state.userData} />
