@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class Expand extends Component {
     constructor(props) {
@@ -36,30 +35,5 @@ class Expand extends Component {
         );
     }
 }
-// Dialog.propTypes = {
-//     isOpen: PropTypes.bool,
-//     children: PropTypes.element.isRequired,
-//     title: PropTypes.string,
-//     onClose: PropTypes.func.isRequired,
-// };
-// Dialog.defaultProps = {
-//     isOPen: false,
-//     title: '',
-// };
 
 export default Expand;
-
-///Первое прохождение
-//////нажали на кнопку Show
-// ----constructor,
-// ----render(),
-// ----componentDidMount;
-
-//Второе прохождение
-/////После нажатия кнопки 'Update'
-// ----shouldComponentUpdate();
-// ----render();
-// ----componentDidUpdate()
-
-// После нажатия кнопки 'Hide'
-// ----componentWillUnmount()

@@ -3,19 +3,6 @@ import React, { Component } from 'react';
 import Expand from './Expand.jsx';
 
 class App extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         isOpen: false,
-    //     };
-    // }
-
-    // toggleBtn = () => {
-    //     this.setState({
-    //         isOpen: !this.state.isOpen,
-    //     });
-    // };
-
     render() {
         return (
             <div className="app">
