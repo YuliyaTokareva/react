@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 import Dialog from './Dialog.jsx';
-import EvenNumbers from './EvenNumbers.jsx';
-import OddNumbers from './OddNumbers.jsx';
 
 class App extends Component {
     constructor(props) {
