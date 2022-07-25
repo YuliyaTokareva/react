@@ -1,10 +1,10 @@
-const baseUrl = 'https://crudcrud.com/api/6814cc7797e24c0e97952e9d3d490d1f/test'
+const baseUrl = 'https://62ac36829fa81d00a7ac26c0.mockapi.io/api/v1/task'
 
 export const createTask = (taskData) => {
     return fetch(baseUrl, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;utc-8',
+            'Content-Type': 'application/json; charset=utf-8',
         },
         body: JSON.stringify(taskData),
     }).then((response) => {
@@ -29,7 +29,7 @@ export const updateTask = (taskId, taskData) => {
     return fetch(`${baseUrl}/${taskId}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json;utc-8',
+            'Content-Type': 'application/json; charset=utf-8',
         },
         body: JSON.stringify(taskData),
     }).then((response) => {
