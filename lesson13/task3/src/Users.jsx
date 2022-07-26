@@ -1,28 +1,32 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import Product from './Product.jsx'
+import User from './User.jsx'
 
-function Products({ match }) {
+function Users({ match }) {
     return (
         <div className="page__content">
-            <h1>Products</h1>
+            <h1>Users</h1>
             <ul className="navigation">
                 <li className="navigation__item">
-                    <Link to={`${match.url}/book`}>Book</Link>
+                    <Link to={`${match.url}/github`}>Github</Link>
                 </li>
                 <li className="navigation__item">
-                    <Link to={`${match.url}/ball`}>Ball</Link>
+                    <Link to={`${match.url}/facebook`}>Facebook</Link>
                 </li>
             </ul>
             <Switch>
                 <Route exact path="/products">
-                    <span>Select a product please</span>
+                    <span>Select a user please</span>
                 </Route>
-                <Route path="/products/:productId" component={Product} />
+                <Route
+                    path="/users/:userName"
+                    info="https://api.github.com/users/"
+                    component={User}
+                />
             </Switch>
         </div>
     )
 }
 
-export default Products
+export default Users
