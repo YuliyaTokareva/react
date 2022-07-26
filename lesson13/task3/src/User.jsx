@@ -1,37 +1,47 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const fetchUser = async (suserId) => {
-    try {
-        const responce = await fetch(`https://api.github.com/users/${suserId}`)
-        if (!responce.ok) {
+//function User({ match }) {
+class User extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            userData: null,
+            userName: this.props.match.params.userName,
+        }
+    }
+    componentDidMount() {
+        this.getData = fetch(`https://api.github.com/users/${this.props.match.params.userName}`)
+            .then((response) => response.json())
+            .then((data) => {
+                //console.log(data)
+                this.setState({
+                    userData: data,
+                    userName: this.props.match.params.userName,
+                })
+            })
+    }
+    // componentWillUnmount() {
+    //     clearInterval(this.getData)
+    // }
+
+    render() {
+        console.log(this.props.match.params.userName)
+        const { userData } = this.state
+        if (!this.state.userData) {
             return null
         }
-        const userData = await responce.json()
-
-        return userData
-    } catch (err) {
-        throw new Error('Failed to get user data')
-    }
-}
-
-console.log(fetchUser('github'))
-
-function User({ match }) {
-    const info = async () => {
-        const res = await fetchUser('github')
-        return res
-    }
-
-    console.log(info())
-    return (
-        <div className="user">
-            {/* <img alt="User Avatar" src={info} className="user__avatar" /> */}
-            <div className="user__info">
-                <span className="user__name">GitHub</span>
-                <span className="user__location">San Francisco,CA</span>
+        const { location, avatar_url, name } = userData
+        console.log(this.props.match.params.userName)
+        return (
+            <div className="user">
+                <img alt="User Avatar" src={avatar_url} className="user__avatar" />
+                <div className="user__info">
+                    <span className="user__name">{name}</span>
+                    <span className="user__location">{location}</span>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default User

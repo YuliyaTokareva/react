@@ -19,11 +19,7 @@ function Users({ match }) {
                 <Route exact path="/products">
                     <span>Select a user please</span>
                 </Route>
-                <Route
-                    path="/users/:userName"
-                    info="https://api.github.com/users/"
-                    component={User}
-                />
+                <Route path="/users/:userName" component={User} />
             </Switch>
         </div>
     )
