@@ -1,28 +1,28 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Home from './Home.jsx'
 import Products from './Products.jsx'
-import Contacts from './Contacts.jsx'
-import PageNotFound from './PageNotFound.jsx'
 
 const App = () => {
     return (
-        <div class="page">
+        <div className="page">
             <BrowserRouter>
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/products">
-                        <Products />
-                    </Route>
-                    <Route path="/contacts">
-                        <Contacts />
-                    </Route>
-                    <Route path="*">
-                        <PageNotFound />
-                    </Route>
-                </Switch>
+                <ul className="navigation">
+                    <li className="navigation__item">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="navigation__item">
+                        <Link to="/products">Products</Link>
+                    </li>
+                </ul>
+
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path="/products">
+                    <Products />
+                </Route>
             </BrowserRouter>
         </div>
     )
