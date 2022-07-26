@@ -16,7 +16,7 @@ function Users({ match }) {
                 </li>
             </ul>
             <Switch>
-                <Route exact path="/products">
+                <Route exact path="/users">
                     <span>Select a user please</span>
                 </Route>
                 <Route path="/users/:userName" component={User} />
