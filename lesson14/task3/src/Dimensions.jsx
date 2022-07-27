@@ -16,7 +16,7 @@ const Dimensions = () => {
         }
         window.addEventListener('resize', onResize)
         return () => {
-            window.removeEventListener('resize', this.onResize)
+            window.removeEventListener('resize', onResize)
         }
     }, [])
 
