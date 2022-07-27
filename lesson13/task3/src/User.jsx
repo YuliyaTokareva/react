@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-//function User({ match }) {
 class User extends Component {
     constructor(props) {
         super(props)
@@ -9,29 +8,37 @@ class User extends Component {
             userName: this.props.match.params.userName,
         }
     }
-    componentDidMount() {
-        this.getData = fetch(`https://api.github.com/users/${this.props.match.params.userName}`)
+    fetchUserInfo() {
+        console.log('do fetch')
+        fetch(`https://api.github.com/users/${this.props.match.params.userName}`)
             .then((response) => response.json())
             .then((data) => {
-                //console.log(data)
                 this.setState({
                     userData: data,
                     userName: this.props.match.params.userName,
                 })
             })
     }
-    // componentWillUnmount() {
-    //     clearInterval(this.getData)
-    // }
+    componentDidMount() {
+        this.getData = this.fetchUserInfo()
+        console.log('do did')
+    }
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.userName !== prevProps.match.params.userName) {
+            this.fetchUserInfo()
+            console.log('do uppdate')
+        }
+        //console.log(`${this.props.match.params.userName}  ${prevProps.match.params.userName}`)
+    }
 
     render() {
-        console.log(this.props.match.params.userName)
+        // console.log(this.props.match.params.userName)
         const { userData } = this.state
         if (!this.state.userData) {
             return null
         }
         const { location, avatar_url, name } = userData
-        console.log(this.props.match.params.userName)
+        console.log('do')
         return (
             <div className="user">
                 <img alt="User Avatar" src={avatar_url} className="user__avatar" />
