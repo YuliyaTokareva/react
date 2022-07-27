@@ -17,7 +17,11 @@ const ConnectionStatus = () => {
         }
     }, [window.navigator.onLine])
 
-    return <div className="status status_offline">{!statusOnline ? 'Offline' : 'Online'}</div>
+    return (
+        <div className={`${statusOnline ? 'status_online' : 'status_offline'} status`}>
+            {statusOnline ? 'Online' : 'Offline'}
+        </div>
+    )
 }
 
 export default ConnectionStatus
