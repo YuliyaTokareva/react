@@ -11,7 +11,11 @@ class User extends Component {
     fetchUserInfo() {
         console.log('do fetch')
         fetch(`https://api.github.com/users/${this.props.match.params.userName}`)
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                }
+            })
             .then((data) => {
                 this.setState({
                     userData: data,
@@ -30,15 +34,32 @@ class User extends Component {
         }
         //console.log(`${this.props.match.params.userName}  ${prevProps.match.params.userName}`)
     }
+    componentWillUnmount() {
+        clearInterval(this.getData)
+    }
+    // shouldComponentUpdate(nextProps) {
+    //     console.log(nextProps.match.url)
+    //     console.log(this.props.match.url)
+    //     if (nextProps.match.url === this.props.match.url) {
+    //         console.log(nextProps.match.url)
+    //         console.log(this.props.match.url)
+    //         return false
+    //     }
+    //     return true
+    //     // this.props.match === nextProps.match
+    //     // console.log(`${nextProps.match.params.userName}  ${this.state.userName}`)
+    //     //return nextProps.match.params.userName !== this.state.userName
+    // }
 
     render() {
         // console.log(this.props.match.params.userName)
+        console.log('do render')
         const { userData } = this.state
         if (!this.state.userData) {
             return null
         }
         const { location, avatar_url, name } = userData
-        console.log('do')
+
         return (
             <div className="user">
                 <img alt="User Avatar" src={avatar_url} className="user__avatar" />
