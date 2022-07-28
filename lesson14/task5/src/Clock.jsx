@@ -20,17 +20,19 @@ const Clock = ({ offset, location }) => {
     const { time, timeZone, city } = clock
     useEffect(() => {
         const interval = setInterval(() => {
+            const { time, ...data } = clock
             setClock({
                 time: getTime(timeZone),
-                timeZone,
-                city,
+                ...data,
+                // timeZone,
+                // city,
             })
         }, 1000)
 
         return () => {
             clearInterval(interval)
         }
-    }, [time, timeZone, city])
+    }, [time])
 
     return (
         <div className="clock">
