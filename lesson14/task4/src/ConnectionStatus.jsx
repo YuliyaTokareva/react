@@ -15,7 +15,7 @@ const ConnectionStatus = () => {
             window.removeEventListener('offline', setConnection)
             window.removeEventListener('online', setConnection)
         }
-    }, [window.navigator.onLine, connection])
+    }, [window.navigator.onLine])
 
     return (
         <div className={`${statusOnline ? 'status_online' : 'status_offline'} status`}>
