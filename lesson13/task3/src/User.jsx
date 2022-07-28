@@ -5,7 +5,7 @@ class User extends Component {
         super(props)
         this.state = {
             userData: null,
-            userName: this.props.match.params.userName,
+            userName: null,
         }
     }
     fetchUserInfo() {
@@ -37,22 +37,12 @@ class User extends Component {
     componentWillUnmount() {
         clearInterval(this.getData)
     }
-    // shouldComponentUpdate(nextProps) {
-    //     console.log(nextProps.match.url)
-    //     console.log(this.props.match.url)
-    //     if (nextProps.match.url === this.props.match.url) {
-    //         console.log(nextProps.match.url)
-    //         console.log(this.props.match.url)
-    //         return false
-    //     }
-    //     return true
-    //     // this.props.match === nextProps.match
-    //     // console.log(`${nextProps.match.params.userName}  ${this.state.userName}`)
-    //     //return nextProps.match.params.userName !== this.state.userName
-    // }
+    shouldComponentUpdate(nextProps) {
+        return nextProps.match.params.userName !== this.state.userName
+    }
 
     render() {
-        // console.log(this.props.match.params.userName)
+        console.log(`Render: ${this.props.match.params.userName}  ${this.state.userName}`)
         console.log('do render')
         const { userData } = this.state
         if (!this.state.userData) {
