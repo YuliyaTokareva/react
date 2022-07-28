@@ -32,7 +32,7 @@ const Clock = ({ offset, location }) => {
         return () => {
             clearInterval(interval)
         }
-    }, [time])
+    }, [offset])
 
     return (
         <div className="clock">

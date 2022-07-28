@@ -7,15 +7,15 @@ const ConnectionStatus = () => {
     })
     const { statusOnline } = connection
     useEffect(() => {
-        const innerOnline = window.navigator.onLine
-        setConnection({ statusOnline: innerOnline })
-        window.addEventListener('online', setConnection)
-        window.addEventListener('offline', setConnection)
+        // const innerOnline = window.navigator.onLine
+        // setConnection({ statusOnline: innerOnline })
+        window.addEventListener('online', () => setConnection({ statusOnline: true }))
+        window.addEventListener('offline', () => setConnection({ statusOnline: false }))
         return () => {
-            window.removeEventListener('offline', setConnection)
-            window.removeEventListener('online', setConnection)
+            window.removeEventListener('online', () => setConnection({ statusOnline: true }))
+            window.removeEventListener('offline', () => setConnection({ statusOnline: false }))
         }
-    }, [window.navigator.onLine])
+    }, [])
 
     return (
         <div className={`${statusOnline ? 'status_online' : 'status_offline'} status`}>
